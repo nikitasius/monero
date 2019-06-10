@@ -1712,7 +1712,7 @@ namespace tools
     if (req.payment_ids.empty())
     {
       std::list<std::pair<crypto::hash,wallet2::payment_details>> payment_list;
-      m_wallet->get_payments(payment_list, req.min_block_height);
+      m_wallet->get_payments(payment_list, req.min_block_height - 1);
 
       for (auto & payment : payment_list)
       {
